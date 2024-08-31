@@ -1,0 +1,7 @@
+{
+  "name": "CasoDuoc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
