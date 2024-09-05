@@ -1,0 +1,38 @@
+ion-header {
+    --border: none; /* Elimina los bordes */
+  }
+
+
+
+.contenedor{
+    background: #fefefe;
+    border: 1px solid #2345f0;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 17px; 
+    height: 60px;
+    margin-bottom: 30px;
+    
+  }
+  
+.boton{
+    --background: #30774e;
+    margin-top: 20px;
+    color: #ffffff;
+    justify-content: center;
+    display: block; 
+    margin-left: 550px; 
+    margin-right: 550px;
+}
+
+.contenedor.todo{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente el contenido */
+  margin-top: 30px; /* Margen superior para separar del título */
+  padding: 20px;
+
+
+}
+
+
