@@ -4,30 +4,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="borde-cont">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">acceso</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <div class="icono-containedor">
+    <ion-icon name="person-circle-outline" style="font-size: 80px; color: #696969;"></ion-icon>
+  </div>
 
+  <div class="contenedor">
+    <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
+  </div>
 
-  <div class="contenedor.todo">
-  <ion-item class="contenedor">
-    <ion-label position="stacked">Usuario</ion-label>
-    <ion-input placeholder="" minlength="3" maxlength="8"></ion-input>
-  </ion-item>
+  <div class="contenedor">
+    <ion-input label="Contraseña" type= "password" label-placement="floating" fill="outline" placeholder="Contraseña"></ion-input>
+  </div>
 
-  <ion-item class="contenedor">
-    <ion-label position="stacked">Contraseña</ion-label>
-    <ion-input type="password" minlength="4" maxlength="4"></ion-input>
-  </ion-item>
-  <a>
-    <small>restablecer contraseña</small>
-  </a>
+  <div class="enlace-cont">
+    <a href="/restablecer">
+      <small>restablecer contraseña</small>
+    </a>
+  </div>
 
-  <ion-button color="success">Acceder</ion-button>
-
+  <div class="boton">
+  <ion-button>Acceder</ion-button>
   </div>
 </ion-content>
