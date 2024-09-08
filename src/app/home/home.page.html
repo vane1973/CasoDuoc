@@ -1,10 +1,10 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true"></ion-header>
   <ion-toolbar>
     <ion-title>
-      Bienvenido nombre_usuario
+      <img class="logo-duoc" src="assets/images/Duoc.jpg" alt="duoc">
+      Bienvenido Usuario_nombre
     </ion-title>
   </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -13,7 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
 
+  <!-- Aquí va el contenido de tu página -->
+  <div *ngIf="!loading" class="fecha-container">
+    <!-- Mostrar la fecha y la hora actuales en un div -->
+    <p>Hoy: {{ fechaHoy }}</p>
+
+    <h3>Registra tu asistencia</h3>
+
+    <img src="assets/images/camara.png" alt="camara">
+  </div>
 
 </ion-content>
-
