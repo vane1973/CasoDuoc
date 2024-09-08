@@ -1,26 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Bienvenido a asistencia Duoc</ion-title>
+    <ion-title>Bienvenido a asistencia Duoc UC</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="borde-cont">
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">acceso</ion-title>
+      <ion-title size="large">Acceso</ion-title>
     </ion-toolbar>
   </ion-header>
+
 
   <div class="icono-containedor">
     <ion-icon name="person-circle-outline" style="font-size: 80px; color: #696969;"></ion-icon>
   </div>
 
   <div class="contenedor">
-    <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
+    <ion-input label="Ingrese usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
   </div>
 
   <div class="contenedor">
-    <ion-input label="Contraseña" type= "password" label-placement="floating" fill="outline" placeholder="Contraseña"></ion-input>
+    <ion-input label="Ingrese contraseña" type= "password" label-placement="floating" fill="outline" placeholder="Contraseña"></ion-input>
   </div>
 
   <div class="enlace-cont">
@@ -30,6 +31,8 @@
   </div>
 
   <div class="boton">
-  <ion-button>Acceder</ion-button>
+    <a href="/home">
+  <ion-button>INGRESAR</ion-button>
+    </a>
   </div>
 </ion-content>
