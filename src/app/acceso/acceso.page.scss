@@ -44,5 +44,19 @@ ion-header {
   text-decoration: none; /* Elimina el subrayado del enlace si lo deseas */
 }
 
+/* Ajustamos el estilo de ion-toolbar para centrar el contenido */
+ion-toolbar {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-align: center;
+}
 
+/* Estilo para el logo de Duoc */
+.logo-duoc {
+  max-width: 80px; /* Ajusta el tamaño del logo */
+  height: auto;
+  margin-right: 10px; /* Opcional: agrega espacio entre el logo y el texto */
+  vertical-align: middle; /* Alinea el logo con el texto */
+}
 
