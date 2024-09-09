@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
+
 
 @Component({
   selector: 'app-restablecer',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestablecerPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  volver(){
+    let navigationExtras: NavigationExtras={ 
+    }
+    this.router.navigate(['/acceso'],navigationExtras);
+  }
+
 
 }

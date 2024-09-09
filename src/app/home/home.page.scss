@@ -1,17 +1,3 @@
-ion-header {
-  --border: none; /* Elimina los bordes */
-}
-
-
-.icono-containedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: -50px; 
-  height: 40vh;
-  position:relative;
-  left: -2px;
-}
 
 .contenedor{
   display: flex;
@@ -21,17 +7,6 @@ ion-header {
   width: 300px; 
   margin: 0 auto;
 }
-
-
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 
 
 /* Ajustamos el estilo de ion-toolbar para centrar el contenido */
@@ -51,22 +26,19 @@ ion-toolbar {
 }
 
 /* Estilos para el contenedor de la fecha */
-.fecha-container {
+.contenedorfecha {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 20px;
-}
-
-.fecha-container p {
   font-size: 18px;
   font-weight: bold;
 }
 
 /* Estilo para el nuevo título */
-.fecha-container h3 {
+.fechah3 {
   font-size: 18px;
   margin-top: 10px;
   font-weight: 500;
@@ -74,8 +46,8 @@ ion-toolbar {
 }
 
 /* Estilo para la imagen */
-.fecha-container img {
-  max-width: 80px;
+.camara {
+  max-width: 2000px;
   margin-top: 15px;
   display: block;
 }

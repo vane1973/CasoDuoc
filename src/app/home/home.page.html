@@ -1,10 +1,9 @@
-<ion-header [translucent]="true"></ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <img class="logo-duoc" src="assets/images/Duoc.jpg" alt="duoc">
-      Bienvenido Usuario_nombre
-    </ion-title>
+    <img class="logo-duoc" src="assets/images/Duoc.jpg" alt="duoc">
+    <ion-title>Bienvenido a asistencia Duoc UC</ion-title>
   </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -16,13 +15,17 @@
   <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
 
   <!-- Aquí va el contenido de tu página -->
-  <div *ngIf="!loading" class="fecha-container">
+  <ion-item *ngIf="!loading" class="contenedorfecha">
     <!-- Mostrar la fecha y la hora actuales en un div -->
     <p>Hoy: {{ fechaHoy }}</p>
+    </ion-item>
 
-    <h3>Registra tu asistencia</h3>
+    <ion-item class="fechah3">
+      <h3>Registra tu asistencia {{user.usuario}}</h3>
+    </ion-item>
 
+    <ion-item class="camara">
     <img src="assets/images/camara.png" alt="camara">
-  </div>
+  </ion-item>
 
 </ion-content>
