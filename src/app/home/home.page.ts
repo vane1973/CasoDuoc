@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd,ActivatedRoute, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,20 @@ export class HomePage implements OnInit {
   loading = true;  // El estado de carga se inicia en verdadero
   fechaHoy: string = '';  // Variable para almacenar la fecha y hora
 
-  constructor(private router: Router) {}
+  user= {
+    usuario: '',
+    password: ''
+  }
+
+  constructor(private activeroute: ActivatedRoute, private router:Router) {
+    //this.location = location;
+    this.activeroute.queryParams.subscribe(params => {
+      if(this.router.getCurrentNavigation()!.extras.state){
+        console.log(this.router.getCurrentNavigation()!.extras.state!['user']);
+        this.user = this.router.getCurrentNavigation()!.extras.state!['user'];
+      }
+    });
+  }
 
   ngOnInit() {
     // Obtener la fecha y hora actual
