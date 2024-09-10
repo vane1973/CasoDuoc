@@ -14,11 +14,15 @@ export class RestablecerPage implements OnInit {
   ngOnInit() {
   }
 
-  volver(){
-    let navigationExtras: NavigationExtras={ 
-    }
-    this.router.navigate(['/acceso'],navigationExtras);
+  volver() {
+    let navigationExtras: NavigationExtras = {};
+    this.router.navigate(['/acceso'], navigationExtras);
   }
 
+  // Función para redirigir al hacer clic en "Recuperar"
+  recuperar() {
+    let navigationExtras: NavigationExtras = {};
+    this.router.navigate(['/acceso'], navigationExtras);
+  }
 
 }

@@ -1,47 +1,51 @@
-.icono-contenedor{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -50px; 
-    height: 40vh;
-    position:relative;
-    left: 580px;
-  }
-
-  .contenedor-usuario{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 20px;
-    width: 300px; 
-    margin: 0 auto;
-  }
-
-  .boton{
-    margin-top: 20px;
-    display: block;
-    position: relative;
-    left: 587px;
+.icono-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -50px; 
+  height: 40vh;
+  position:relative;
+  left: 580px;
 }
 
-  /* Estilo para el logo de Duoc */
-  .logo-duoc {
-    max-width: 80px; /* Ajusta el tamaño del logo */
-    height: auto;
-    margin-right: 10px; /* Opcional: agrega espacio entre el logo y el texto */
-    vertical-align: middle; /* Alinea el logo con el texto */
-  }
+.contenedor-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 20px;
+  width: 300px; 
+  margin: 0 auto;
+}
 
-  .volver{
-    margin-top: 20px;
-    display: block;
-    position: relative;
-    left: 1000px;
+.boton {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+  left: 587px;
+}
+
+/* Estilo para el logo de Duoc */
+.logo-duoc {
+  max-width: 80px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Estilo para el texto "Volver" */
+.volver {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+  left: 587px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 ion-toolbar {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
