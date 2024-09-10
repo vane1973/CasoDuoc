@@ -14,24 +14,18 @@
 
   <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
 
-  <!-- Contenedor para la fecha -->
-  <ion-item *ngIf="!loading" lines="none" class="contenedorfecha">
+  <!-- Aquí va el contenido de tu página -->
+  <ion-item *ngIf="!loading" class="contenedorfecha">
+    <!-- Mostrar la fecha y la hora actuales en un div -->
     <p>Hoy: {{ fechaHoy }}</p>
-  </ion-item>
+    </ion-item>
 
-  <!-- Contenedor para el título con usuario -->
-  <ion-item *ngIf="!loading" lines="none" class="fechah3">
-    <h3>Registra tu asistencia, {{user.usuario}}</h3>
-  </ion-item>
+    <ion-item class="fechah3">
+      <h3>Registra tu asistencia {{user.usuario}}</h3>
+    </ion-item>
 
-  <!-- Contenedor para la imagen de la cámara -->
-  <ion-item *ngIf="!loading" lines="none" class="camara">
+    <ion-item class="camara">
     <img src="assets/images/camara.png" alt="camara">
   </ion-item>
-
-    <!-- Agregar el enlace de "Salir" al final de la página -->
-    <ion-item *ngIf="!loading"lines="none" class="salir-container">
-      <p (click)="salir()" style="cursor: pointer; color: blue;">Salir</p>
-    </ion-item>
 
 </ion-content>

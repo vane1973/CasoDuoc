@@ -1,16 +1,17 @@
-.contenedor {
+
+.contenedor{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
   padding: 20px;
-  width: 300px;
+  width: 300px; 
   margin: 0 auto;
 }
+
 
 /* Ajustamos el estilo de ion-toolbar para centrar el contenido */
 ion-toolbar {
   display: flex;
-  flex-direction: column;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
   text-align: center;
@@ -18,48 +19,35 @@ ion-toolbar {
 
 /* Estilo para el logo de Duoc */
 .logo-duoc {
-  max-width: 80px; /* Tamaño del logo */
+  max-width: 80px; /* Ajusta el tamaño del logo */
   height: auto;
-  margin-bottom: 10px; /* Añade un margen entre el logo y el texto */
+  margin-right: 10px; /* Opcional: agrega espacio entre el logo y el texto */
+  vertical-align: middle; /* Alinea el logo con el texto */
 }
 
 /* Estilos para el contenedor de la fecha */
 .contenedorfecha {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%; /* Ocupa todo el ancho del ion-item */
+  margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
 }
 
 /* Estilo para el nuevo título */
 .fechah3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%; /* Ocupa todo el ancho del ion-item */
   font-size: 18px;
   margin-top: 10px;
   font-weight: 500;
+  text-align: center;
 }
 
-/* Estilo para la imagen de la cámara */
-.camara img {
-  max-width: 100px; /* Ajusta el tamaño de la imagen */
+/* Estilo para la imagen */
+.camara {
+  max-width: 2000px;
   margin-top: 15px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Aseguramos que ion-item esté centrado */
-ion-item {
-  --inner-padding-end: 0;
-  --inner-padding-start: 0;
-  justify-content: center; /* Centra el contenido */
-  align-items: center;
-  text-align: center;
 }

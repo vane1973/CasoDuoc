@@ -12,36 +12,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card-content>
-    <!-- Icono de usuario -->
-    <ion-item class="icono-contenedor">
-      <ion-icon name="person-circle-outline" style="font-size: 80px; color: #696969;"></ion-icon>
-    </ion-item>
+<ion-card-content>
+  <ion-item class="icono-contenedor">
+    <ion-icon name="person-circle-outline" style="font-size: 80px; color: #696969;"></ion-icon>
+  </ion-item>
 
-    <!-- Input de usuario -->
-    <ion-item class="contenedor">
-      <ion-input [(ngModel)]="user.usuario" label="Ingrese usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
-    </ion-item>
+  <ion-item class="contenedor">
+    <ion-input label="Ingrese usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com" [(ngModel)]="user.usuario"></ion-input>
+  </ion-item>
 
-    <!-- Input de contraseña -->
-    <ion-item class="contenedor">
-      <ion-input [(ngModel)]="user.password" type="password" maxlength="8" label="Ingrese contraseña" label-placement="floating" fill="outline" placeholder="Contraseña"></ion-input>
-    </ion-item>
+  <ion-item class="contenedor">
+    <ion-input label="Ingrese contraseña" type= "password" label-placement="floating" fill="outline" placeholder="Contraseña" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
 
-    <!-- Mensajes de error -->
-    <ion-item *ngIf="errorMessage" lines="none">
-      <p style="color: red;">{{ errorMessage }}</p>
-    </ion-item>
+  
+  <ion-item class="enlace-cont">
+    <ion-button (click)="restablecer()">restablecer contraseña</ion-button>
+  </ion-item>
+  
+<ion-item class="boton">
+ <ion-button (click)="ingresar()">INGRESAR</ion-button>
+</ion-item>
 
-    <!-- Botón para ingresar -->
-    <ion-item class="boton">
-      <ion-button (click)="ingresar()">INGRESAR</ion-button>
-    </ion-item>
-
-    <!-- Enlace para restablecer la contraseña -->
-    <ion-item lines="none" class="recuperar-container">
-      <p (click)="recuperar()" style="cursor: pointer; color: blue;">Recuperar contraseña</p>
-    </ion-item>
-
-  </ion-card-content>
+</ion-card-content>
 </ion-content>
