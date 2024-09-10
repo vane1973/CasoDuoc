@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+
 
 @Component({
   selector: 'app-acceso',
@@ -34,17 +35,19 @@ export class AccesoPage {
 
     // Validar usuario y contraseña
     if (this.user.usuario === 'juan' && this.user.password === 'juan1234') {
-      // Redirigir al home si las credenciales son correctas
-      this.router.navigate(['/home']);
+      // Pasar el objeto `user` a la página de inicio
+      let navigationExtras: NavigationExtras = {
+        state: {
+          user: this.user
+        }
+      };
+      this.router.navigate(['/home'], navigationExtras);
     } else {
-      // Mostrar mensaje de error si las credenciales son incorrectas
       this.errorMessage = 'Usuario o contraseña incorrecta';
     }
   }
 
-  // Función para redirigir a la página de restablecimiento de contraseña
   recuperar() {
     this.router.navigate(['/restablecer']);
   }
-
 }
