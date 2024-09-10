@@ -42,8 +42,4 @@ export class HomePage implements OnInit {
       }
     });
   }
-
-  salir() {
-    this.router.navigate(['/acceso']); // Navega hacia la página de acceso
-  }
 }
