@@ -29,7 +29,7 @@
     </ion-item>
 
     <!-- Mensajes de error -->
-    <ion-item *ngIf="errorMessage" lines="none">
+    <ion-item *ngIf="errorMessage" lines="none" class="error-message-container">
       <p style="color: red;">{{ errorMessage }}</p>
     </ion-item>
 
@@ -40,7 +40,7 @@
 
     <!-- Enlace para restablecer la contraseña -->
     <ion-item lines="none" class="recuperar-container">
-      <p (click)="recuperar()" style="cursor: pointer; color: blue;">Recuperar contraseña</p>
+      <p (click)="recuperar()" style="cursor: pointer; color: rgb(0, 0, 0);">Recuperar contraseña</p>
     </ion-item>
 
   </ion-card-content>

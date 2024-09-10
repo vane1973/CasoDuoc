@@ -61,7 +61,18 @@ ion-toolbar {
 
 .recuperar-container {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  text-align: center;
+  justify-content: flex-end; /* Alinea el enlace a la derecha del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  margin-top: 10px; /* Ajusta el margen superior si es necesario */
+  position: relative;
+  left: 600px;
+}
+
+.error-message-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el enlace a la derecha del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  margin-top: 10px; /* Ajusta el margen superior si es necesario */
+  position: relative;
+  left: 600px;
 }

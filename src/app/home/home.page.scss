@@ -26,24 +26,21 @@ ion-toolbar {
 /* Estilos para el contenedor de la fecha */
 .contenedorfecha {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%; /* Ocupa todo el ancho del ion-item */
-  font-size: 18px;
-  font-weight: bold;
+  justify-content: flex-end; /* Alinea el enlace a la derecha del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  margin-top: 10px; /* Ajusta el margen superior si es necesario */
+  position: relative;
+  left: 600px;
 }
 
 /* Estilo para el nuevo título */
 .fechah3 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%; /* Ocupa todo el ancho del ion-item */
-  font-size: 18px;
-  margin-top: 10px;
-  font-weight: 500;
+  justify-content: flex-end; /* Alinea el enlace a la derecha del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  margin-top: 10px; /* Ajusta el margen superior si es necesario */
+  position: relative;
+  left: 600px;
 }
 
 /* Estilo para la imagen de la cámara */
@@ -62,4 +59,24 @@ ion-item {
   justify-content: center; /* Centra el contenido */
   align-items: center;
   text-align: center;
+}
+
+
+.salir-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el enlace a la derecha del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  margin-top: 10px; /* Ajusta el margen superior si es necesario */
+  position: relative;
+  left: 600px;
+}
+
+.icono-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -80px; 
+  height: 40vh;
+  position:relative;
+  left: 580px;
 }
