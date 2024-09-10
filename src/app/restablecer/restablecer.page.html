@@ -20,14 +20,13 @@
     <ion-input label="Ingresa usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
   </ion-item>
 
- <ion-item class="boton">
-  <ion-button>RECUPERAR</ion-button>
-</ion-item>
-
- 
-  <ion-item class="volver">
-      <ion-button>Volver</ion-button>
+  <ion-item class="boton">
+    <ion-button (click)="recuperar()">RECUPERAR</ion-button>
   </ion-item>
 
+  <!-- Texto de "Volver" -->
+  <ion-item lines="none" class="volver">
+    <p (click)="volver()" style="cursor: pointer; color: rgb(0, 0, 0);">Volver</p>
+  </ion-item>
 
 </ion-content>

@@ -1,48 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acceso',
   templateUrl: './acceso.page.html',
   styleUrls: ['./acceso.page.scss'],
 })
-export class AccesoPage implements OnInit {
-  user={
-    usuario:"",
-    password:""
-  }
+export class AccesoPage {
+
+  // Datos del formulario
+  user = {
+    usuario: '',
+    password: ''
+  };
+
+  // Mensaje de error
+  errorMessage: string = '';
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
+  ingresar() {
+    // Validar si los campos están vacíos
+    if (this.user.usuario === '' || this.user.password === '') {
+      this.errorMessage = 'Ingrese usuario y contraseña';
+      return;
+    }
+
+    // Validar si la contraseña es menor de 8 caracteres
+    if (this.user.password.length < 8) {
+      this.errorMessage = 'Ingrese una contraseña de 8 dígitos';
+      return;
+    }
+
+    // Validar usuario y contraseña
+    if (this.user.usuario === 'juan' && this.user.password === 'juan1234') {
+      // Redirigir al home si las credenciales son correctas
+      this.router.navigate(['/home']);
+    } else {
+      // Mostrar mensaje de error si las credenciales son incorrectas
+      this.errorMessage = 'Usuario o contraseña incorrecta';
+    }
   }
 
-  ingresar(){
-    
-    let navigationExtras: NavigationExtras = {
-      state: {
-        user: this.user 
-      }
-    };
-    this.router.navigate(['/home'],navigationExtras); 
+  // Función para redirigir a la página de restablecimiento de contraseña
+  recuperar() {
+    this.router.navigate(['/restablecer']);
   }
-  validarLogin(){
-    if(this.user.usuario.length >= 10 && this.user.usuario.length <= 15 && this.user.password.length == 4 && this.user.password.match(/^\d{4}$/)){
-      this.ingresar();  
-    }
-    else{
-      alert("Usuario y/o contraseña incorrectos");
-    }
-  }
-
-  restablecer(){
-    let navigationExtras: NavigationExtras={
-     
-    }
-    this.router.navigate(['/restablecer'],navigationExtras);
-  }
-
-  
 
 }
