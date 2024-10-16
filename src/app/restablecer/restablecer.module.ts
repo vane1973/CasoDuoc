@@ -13,7 +13,7 @@ import { RestablecerPage } from './restablecer.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RestablecerPageRoutingModule
+    RestablecerPageRoutingModule,
   ],
   declarations: [RestablecerPage]
 })
