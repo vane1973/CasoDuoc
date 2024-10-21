@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { SqliteService } from '../services/sqlite.service';
+import { NavController, ToastController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { User } from '../models/user.model';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -9,67 +12,79 @@ import { SqliteService } from '../services/sqlite.service';
   styleUrls: ['./acceso.page.scss'],
 })
 export class AccesoPage implements OnInit {
-  user={
-    usuario:"",
-    password:""
-  };
-
-  public language: string;
-  public languages: string[];
-
-  constructor(private router: Router,
-    private sqlite :SqliteService
-  ) {
-    this.language = '';
-    this.languages = [];
-
-
-  }
-
-  ngOnInit() {
-  }
-
-
-
-  ingresar(){
-this.sqlite.ingresar(this.language).then((changes) => {
-      console.log(changes);
-      console.log("creado");
-    }).catch(err => {
-       console.error(err)
-       console.error("error al crear");
-    })
+  user = {} as User; 
+ 
+  constructor(
+    private router: Router,
+    private storage: Storage,
+    private toastCtrl: ToastController,
+    private aFauth: AngularFireAuth,
+    private navCtrl: NavController) {}
     
-    let navigationExtras: NavigationExtras = {
-      state: {
-        user: this.user 
-      }
-    };
-    this.router.navigate(['/home'],navigationExtras); 
 
+  async ngOnInit() {
+
+    await this.storage.create();
+  }
+
+  async acceso(user: User) {
+    if (this.formValidation()) {
+      this.showToast("Espere un momento por favor...");
+
+      try {
+        await this.aFauth.signInWithEmailAndPassword(user.email, user.password).then(async data => {
+          console.log(data);
+          await this.datos();
+          this.navCtrl.navigateRoot("home");
+        });
+      } catch (e: any) {
+        let errorMessage = e.message || e.getLocalizedMessage();
+        this.showToast("Usuario no registrado: " + errorMessage);
+      }
+    }
+  }
+
+formValidation() {
+  if (!this.user.email) {
+    this.showToast("Ingrese un email");
+    return false;
+  }
+
+  if (!this.user.password) {
+    this.showToast("Ingrese una contraseña");
+    return false;
+  }
+
+  return true;
+}
+
+showToast(message: string) {
+  this.toastCtrl.create({
+    message: message,
+    duration: 5000
+  }).then(toastData => toastData.present());
 }
 
 
-
-  validarLogin(){
-    if(this.user.usuario.length >= 10 && this.user.usuario.length <= 15 && this.user.password.length == 4 && this.user.password.match(/^\d{4}$/)){
-      this.ingresar();  
-    }
-    else{
-      alert("Usuario y/o contraseña incorrectos");
-    }
-  }
-
   restablecer(){
-    let navigationExtras: NavigationExtras={
-     
-    }
-    this.router.navigate(['/restablecer'],navigationExtras);
+    let navigationExtras: NavigationExtras = {};
+    this.router.navigate(['/restablecer'], navigationExtras);
   }
 
+  registro(){
+    let navigationExtras: NavigationExtras = {};
+    this.router.navigate(['/registro'],navigationExtras)
 
+    }
+
+    datos(){
+      this.storage.set("email1", "ju.reyesm@duocuc.cl");
+      this.storage.set("email2", "van.arias@duocuc.cl");
   
+      console.log("Correos registrados en Storage");
+    }
 
+    
   
 
 }

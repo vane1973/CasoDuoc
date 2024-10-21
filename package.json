@@ -18,6 +18,7 @@
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
     "@angular/core": "^18.0.0",
+    "@angular/fire": "^18.0.1",
     "@angular/forms": "^18.0.0",
     "@angular/material": "^18.2.7",
     "@angular/platform-browser": "^18.0.0",
@@ -31,7 +32,10 @@
     "@capacitor/keyboard": "6.0.2",
     "@capacitor/preferences": "^6.0.2",
     "@capacitor/status-bar": "6.0.1",
-    "@ionic/angular": "^8.0.0",
+    "@ionic/angular": "^8.3.3",
+    "@ionic/storage-angular": "^4.0.0",
+    "crypto-browserify": "^3.12.0",
+    "firebase": "github:angular/fire",
     "ionicons": "^7.0.0",
     "jeep-sqlite": "^2.8.0",
     "rxjs": "~7.8.0",
@@ -40,6 +44,7 @@
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^18.0.0",
     "@angular-devkit/build-angular": "^18.0.0",
     "@angular-eslint/builder": "^18.0.0",
     "@angular-eslint/eslint-plugin": "^18.0.0",
