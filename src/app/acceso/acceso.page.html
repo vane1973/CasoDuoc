@@ -8,25 +8,17 @@
 <ion-content [fullscreen]="true">
 
 
-  <ion-item-sliding *ngFor="let language of languages">
-
-    <ion-item>
-      <ion-label>{{language}}</ion-label>
-
-    </ion-item>
-  </ion-item-sliding>
-
 <ion-card-content>
   <ion-item class="icono-contenedor">
     <ion-icon name="person-circle-outline" style="font-size: 80px; color: #696969;"></ion-icon>
   </ion-item>
 
   <ion-item class="contenedor">
-    <ion-input label="Ingrese usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com" [(ngModel)]="user.usuario"></ion-input>
+    <ion-input label="Ingrese email" label-placement="floating" fill="outline" placeholder="Email" required [(ngModel)]="user.email"></ion-input>
   </ion-item>
 
   <ion-item class="contenedor">
-    <ion-input label="Ingrese contraseña" type= "password" label-placement="floating" fill="outline" placeholder="Contraseña" [(ngModel)]="user.password"></ion-input>
+    <ion-input label="Ingrese contraseña" type= "password" label-placement="floating" fill="outline" placeholder="Contraseña" required [(ngModel)]="user.password"></ion-input>
   </ion-item>
 
   
@@ -35,7 +27,11 @@
   </ion-item>
   
 <ion-item class="boton">
- <ion-button (click)="validarLogin()">INGRESAR</ion-button>
+ <ion-button (click)="acceso(user)">INGRESAR</ion-button>
+</ion-item>
+
+<ion-item class="boton-registro">
+  <ion-button (click)="registro()">Registrarse</ion-button>
 </ion-item>
 
 </ion-card-content>

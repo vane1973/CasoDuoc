@@ -12,18 +12,20 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Aquí va el contenido de tu página -->
+
   <ion-item  class="contenedorfecha">
-    <!-- Mostrar la fecha y la hora actuales en un div -->
+   
     <p>Hoy: {{ fechaHoy }}</p>
     </ion-item>
 
     <ion-item class="fechah3">
-      <h3>Registra tu asistencia {{user.usuario}}</h3>
+      <h3></h3>
     </ion-item>
 
     <ion-item class="camara">
     <img src="assets/images/camara.png" alt="camara">
   </ion-item>
+
+  <ion-button (click)="verStorage()">Usuarios registrados</ion-button>
 
 </ion-content>
