@@ -12,24 +12,19 @@
     </ion-toolbar>
   </ion-header>
 
-  
-
   <ion-item class="icono-contenedor">
     <ion-icon name="person-circle-outline" style="font-size: 80px; color: #696969;"></ion-icon>
   </ion-item>
 
   <ion-item class="contenedor-usuario">
-    <ion-input label="Ingresa usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
+    <ion-input [(ngModel)]="user.email" label="Ingresa usuario" label-placement="floating" fill="outline" placeholder="Email@gmail.com"></ion-input>
   </ion-item>
 
- <ion-item class="boton">
-  <ion-button>RECUPERAR</ion-button>
-</ion-item>
+  <ion-item class="boton">
+    <ion-button (click)="recuperarpassword()">RECUPERAR</ion-button>
+  </ion-item>
 
- 
   <ion-item class="volver">
-      <ion-button>Volver</ion-button>
+    <ion-button routerLink="/login">Volver</ion-button>
   </ion-item>
-
-
 </ion-content>

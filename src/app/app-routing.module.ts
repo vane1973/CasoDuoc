@@ -31,7 +31,16 @@ const routes: Routes = [
   
   {path: '**', 
   loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
-  }
+  },
+  {
+    path: 'alumno',
+    loadChildren: () => import('./alumno/alumno.module').then(m => m.AlumnoPageModule) 
+  },
+  {
+    path: 'profesor',
+    loadChildren: () => import('./profesor/profesor.module').then(m => m.ProfesorPageModule) 
+  },
+
 
   
 ];

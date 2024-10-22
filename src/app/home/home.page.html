@@ -29,4 +29,10 @@
 
   <ion-button (click)="verStorage()">Usuarios registrados</ion-button>
 
+  <ion-content>
+    <ion-button [routerLink]="['./alumno']">Ir a Alumno</ion-button>
+    <ion-button [routerLink]="['./profesor']">Ir a Profesor</ion-button>
+  
+    <router-outlet></router-outlet>
+
 </ion-content>
