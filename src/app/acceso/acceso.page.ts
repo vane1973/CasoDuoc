@@ -84,7 +84,6 @@ showToast(message: string) {
       console.log("Correos registrados en Storage");
     }
 
-    
   
 
 }
