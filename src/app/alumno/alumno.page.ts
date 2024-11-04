@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-alumno',
@@ -11,5 +12,7 @@ export class AlumnoPage implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

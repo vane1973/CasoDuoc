@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { AuthEmailService } from '../services/auth-email.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 
 
@@ -12,7 +13,7 @@ import { AuthEmailService } from '../services/auth-email.service';
 export class RestablecerPage {
   user = { email: '' }; // Objeto para almacenar el correo del usuario
 
-  constructor(private AuthEmailService: AuthEmailService, private toastCtrl: ToastController) {}
+  constructor(private AuthEmailService: AuthEmailService, private toastCtrl: ToastController, private router: Router) {}
 
   async recuperarpassword() {
     if (!this.user.email) {
@@ -35,4 +36,18 @@ export class RestablecerPage {
       position: 'bottom'
     }).then(toast => toast.present());
   }
+
+  botonVolver() {
+    // Opcional: Definir datos a enviar a la página 'acceso'
+    const navigationExtras: NavigationExtras = {
+      state: {
+        message: 'Volviendo a la página de acceso',
+        timestamp: Date.now()
+      }
+    };
+
+    // Navegar a la página 'acceso'
+    this.router.navigate(['acceso'], navigationExtras);
+  }
+
 }

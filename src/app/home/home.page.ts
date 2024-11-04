@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd,ActivatedRoute, NavigationExtras } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { MatDialog } from '@angular/material/dialog';
+import { LogoutConfirmationDialogComponent } from '../logout-confirmation-dialog/logout-confirmation-dialog.component';
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +13,9 @@ import { Storage } from '@ionic/storage-angular';
 
 
 export class HomePage implements OnInit {
-  fechaHoy: string = '';  
+  fechaHoy: string = '';
+  readonly dialog = inject(MatDialog);
+  private readonly router = inject(Router);  
 
 
   user= {
@@ -20,8 +25,8 @@ export class HomePage implements OnInit {
 
   constructor(
     private activeroute: ActivatedRoute,
-    private router:Router,
-    private storage: Storage) {
+    private storage: Storage,
+  ) {
 
     this.activeroute.queryParams.subscribe(params => {
       if(this.router.getCurrentNavigation().extras.state){
@@ -47,4 +52,21 @@ export class HomePage implements OnInit {
     if (email2) console.log(email2);
 
   }
+
+
+
+  SalirLogin(): void {
+    const dialogRef = this.dialog.open(LogoutConfirmationDialogComponent, {
+      width: '250px',
+      enterAnimationDuration: '300ms',
+      exitAnimationDuration: '300ms',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.router.navigate(['acceso']); // Redirige a la página "acceso" si el usuario confirma
+      }
+    });
+  }
+
 }

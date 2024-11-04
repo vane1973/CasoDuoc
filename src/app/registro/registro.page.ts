@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from "../models/user.model";
 import { NavController, ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -14,7 +15,8 @@ export class RegistroPage implements OnInit {
   constructor(
     private toastCtrl: ToastController,
     private aFauth: AngularFireAuth,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private router: Router
   ) { }
 
   ngOnInit() {}
@@ -51,6 +53,19 @@ export class RegistroPage implements OnInit {
       message: message,
       duration: 4000
     }).then(toastData => toastData.present());
+  }
+
+  botonVolver() {
+    // Opcional: Definir datos a enviar a la página 'acceso'
+    const navigationExtras: NavigationExtras = {
+      state: {
+        message: 'Volviendo a la página de acceso',
+        timestamp: Date.now()
+      }
+    };
+
+    // Navegar a la página 'acceso'
+    this.router.navigate(['acceso'], navigationExtras);
   }
 
 }
